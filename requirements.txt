@@ -1,0 +1,12 @@
+numpy
+pandas
+scipy
+scikit-learn
+matplotlib
+pillow
+h5py
+tensorflow>=2.10,<2.16
+keras<3
+supersmoother
+george
+tqdm

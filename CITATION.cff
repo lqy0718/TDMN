@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the accompanying Universe article."
+title: "TDMN: Two-Stage Decoupled Multimodal Learning for Periodic Variable-Star Classification"
+type: software
+authors:
+  - family-names: Lu
+    given-names: Qingyu
+  - family-names: Zhang
+    given-names: Feng
+  - family-names: Zou
+    given-names: Zhiqiang
+  - family-names: Su
+    given-names: Tianyu
+  - family-names: Zhang
+    given-names: Xiaohang
+  - family-names: Luo
+    given-names: Ali
+  - family-names: Kong
+    given-names: Xiao
+

@@ -1,0 +1,34 @@
+{
+  "protocol_version": "2026-08-29-v2",
+  "selection_rule": "validation_macro_f1_only",
+  "test_rule": "evaluate_each_frozen_estimator_once",
+  "prediction_contract": ["object_id", "y_true", "y_pred", "probabilities"],
+  "upsilon_features": [
+    "amplitude",
+    "hl_amp_ratio",
+    "kurtosis",
+    "period",
+    "phase_cusum",
+    "phase_eta",
+    "phi21",
+    "phi31",
+    "quartile31",
+    "r21",
+    "r31",
+    "shapiro_w",
+    "skewness",
+    "slope_per10",
+    "slope_per90",
+    "stetson_k"
+  ],
+  "surveys": {
+    "crts": {
+      "class_names": ["RRab", "RRc", "RRd", "Blazhko", "Ecl", "EA", "Rot", "LPV", "delta-Scuti", "ACep", "Cep-II"]
+    },
+    "ogle": {
+      "class_names": ["ACEP_F", "ACEP_1O", "CEP_F", "CEP_1O", "CEP_1O2O", "DSCT_SINGLEMODE", "DSCT_MULTIMODE", "ECL_C", "ECL_NC", "RRLYR_RRAB", "RRLYR_RRC", "RRLYR_RRD", "T2CEP_BLHER", "T2CEP_RVTAU", "T2CEP_WVIR"],
+      "major_class_names": ["ACEP", "CEP", "DSCT", "ECL", "RRLYR", "T2CEP"],
+      "sub_to_major": [0, 0, 1, 1, 1, 2, 2, 3, 3, 4, 4, 4, 5, 5, 5]
+    }
+  }
+}

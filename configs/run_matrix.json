@@ -1,0 +1,23 @@
+{
+  "primary_runs": {
+    "crts": {
+      "tdmn": [42, 142, 242],
+      "upsilon_feature_rf": [42, 142, 242]
+    },
+    "ogle": {
+      "tdmn": [42, 142, 242],
+      "upsilon_feature_rf": [42, 142, 242]
+    }
+  },
+  "primary_comparisons": [
+    "CRTS: TDMN vs UPSILoN-feature RF on 11 classes",
+    "OGLE: TDMN vs UPSILoN-feature RF on 15 subclasses",
+    "OGLE: the same predictions aggregated to 6 major classes"
+  ],
+  "bootstrap_iterations": 10000,
+  "notes": [
+    "Use identical object IDs and splits within each survey.",
+    "Do not compare CRTS and OGLE scores as if they used the same label space.",
+    "Seed 42 is the pilot; run 142 and 242 only after the pipeline validates."
+  ]
+}
