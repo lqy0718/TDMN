@@ -18,6 +18,8 @@ data/cache/
 data/cartlinDR2/
 data/cartlinDR2.tar
 data/SSS_Per_Tab*.dat
+data/SSS_Per_Var_Cat/
+data/SSS_Per_Var_Cat.tar.gz
 *.h5
 *.hdf5
 

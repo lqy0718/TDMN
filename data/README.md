@@ -1,12 +1,42 @@
 # Data layout
 
 Raw survey data and generated model inputs are not committed to this Git
-repository. Place downloaded files under `data/raw/`, then let the preparation
+repository. Follow the survey-specific layouts below, then let the preparation
 scripts write derived files to `data/processed/`.
 
 ## CRTS
 
-The CRTS preparation script expects the following layout:
+The official Catalina Surveys Southern Periodic Variable Catalog download page
+is:
+
+http://nesssi.cacr.caltech.edu/DataRelease/VarcatS.html
+
+Download the numerical catalogue and the associated CSDR2 photometry archive:
+
+```bash
+mkdir -p data
+
+curl -L \
+  http://nesssi.cacr.caltech.edu/DataRelease/SSS_Per_Tab.dat \
+  -o data/SSS_Per_Tab.dat
+
+curl -L \
+  http://nesssi.cacr.caltech.edu/DataRelease/SSS_Per_Var_Cat.tar.gz \
+  -o data/SSS_Per_Var_Cat.tar.gz
+
+tar -xzf data/SSS_Per_Var_Cat.tar.gz -C data
+python data/prepare_crts_layout.py
+```
+
+The official archive extracts to the flat directory
+`data/SSS_Per_Var_Cat/`. The layout utility reads the numerical type from
+`SSS_Per_Tab.dat` and creates hard links under the class-specific directories
+required by the experiment code. It includes catalogue types 1–10 and 12;
+type 11 (miscellaneous) and type 13 (LMC classical Cepheids) are outside the
+inherited 11-class benchmark. Use `--mode copy` if the filesystem does not
+support hard links.
+
+After this step, the CRTS preparation script expects and finds:
 
 ```text
 data/
@@ -21,9 +51,8 @@ data/
 
 `SSS_Per_Tab.dat` contains catalogue metadata. Each light-curve file is a
 whitespace-separated table consumed by `experiments/crts/1_prepare_crts_tdmn.py`.
-The 11-class benchmark follows the CRTS/CSDR2 benchmark construction described
-in the accompanying paper. Preserve the original object identifiers and class
-directories.
+The layout step preserves the downloaded files and their object identifiers;
+it only makes the class directories expected by the preparation code.
 
 Catalogue reference:
 
@@ -81,4 +110,3 @@ a research-data repository such as Zenodo or an institutional repository, then
 add the permanent DOI/download URL to the top-level README and to the article's
 Data Availability Statement. Include SHA-256 checksums for every released HDF5
 and manifest file.
-

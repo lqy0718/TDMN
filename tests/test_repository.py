@@ -23,6 +23,7 @@ class RepositoryTests(unittest.TestCase):
 
     def test_required_entry_points_exist(self):
         expected = (
+            "data/prepare_crts_layout.py",
             "experiments/crts/1_prepare_crts_tdmn.py",
             "experiments/crts/2_train_crts_tdmn.py",
             "experiments/crts/3_extract_upsilon_features.py",
