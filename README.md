@@ -217,9 +217,7 @@ python -m unittest discover -s tests -v
 
 ## Citation
 
-Please cite the accompanying Universe article once its final bibliographic
-record is available. A machine-readable software citation is provided in
-[`CITATION.cff`](CITATION.cff); add the article DOI there after publication.
+
 
 ## Third-party software and data
 
